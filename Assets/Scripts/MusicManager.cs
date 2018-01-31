@@ -18,6 +18,20 @@ public class MusicManager : MonoBehaviour {
         yield return null;
         yield return null;
 
-        AkSoundEngine.PostEvent("interactive_music", gameObject, (uint)AkCallbackType.AK_MusicSyncBeat, _beatManager.BeatCallback, this);
+        AkSoundEngine.PostEvent("interactive_music", gameObject, (uint)AkCallbackType.AK_MusicSyncBeat | (uint)AkCallbackType.AK_EndOfEvent | (uint)AkCallbackType.AK_EnableGetSourcePlayPosition, MainMusicCallback, this);
+    }
+
+    void MainMusicCallback(object cookie, AkCallbackType type, object callbakInfo)
+    {
+        switch (type)
+        {
+            case AkCallbackType.AK_EndOfEvent:
+                // TODO : Handle end of music
+                break;
+
+            case AkCallbackType.AK_MusicSyncBeat:
+                _beatManager.BeatCallback();
+                break;
+        }
     }
 }

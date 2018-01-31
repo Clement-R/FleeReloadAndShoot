@@ -5,9 +5,8 @@ using pkm.EventManager;
 
 public class BeatDetection : MonoBehaviour
 {
-    public void BeatCallback(object cookie, AkCallbackType type, object callbakInfo)
+    public void BeatCallback()
     {
         EventManager.TriggerEvent("Beat", new { });
-        Debug.Log("Beat");
     }
 }
