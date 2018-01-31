@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd016802731a35649a7722d58105b8c3, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  CurrentPluginConfig: 
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{0752FA44-ACDE-4E60-AD59-5699775F1A63}'
+    m_lastTimePsrt1: 1212256742
+    m_lastTimePart2: -1999280195
+    List:
+    - Name: interactive_music
+      Path: Default Work Unit\interactive_music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: interactive_music
+        ObjectType: 3
+      ID: -559977733
+      Guid: 72a5acd6be60924b9e5f0300e405ff92
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: urban_loop
+      Path: Default Work Unit\urban_loop
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: urban_loop
+        ObjectType: 3
+      ID: -170536100
+      Guid: f4b505042074d3498a0039fc38dbba6f
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{53766FF2-7B7E-404B-9FE1-BB2753BA0913}'
+    m_lastTimePsrt1: -30048110
+    m_lastTimePart2: -1999283820
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{B117DDE9-DEFB-422D-B6F9-A66F8EA6430C}'
+    m_lastTimePsrt1: 1254892858
+    m_lastTimePart2: -1999283820
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{D2634126-974E-4ACD-B153-D5197E0A031B}'
+    m_lastTimePsrt1: 1254882846
+    m_lastTimePart2: -1999283820
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{CEC48377-3E47-46B6-896F-B2F34918D49A}'
+    m_lastTimePsrt1: 1323244987
+    m_lastTimePart2: -1999280202
+    List:
+    - Name: SoundBank
+      Path: Default Work Unit\SoundBank
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SoundBank
+        ObjectType: 7
+      ID: 1661994096
+      Guid: 0c2f90ab522fae49b637099f44691c3c
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{287F05CF-51AD-4E15-86F5-337E05BF75F0}'
+    m_lastTimePsrt1: 437459403
+    m_lastTimePart2: -1999283819
+    List:
+    - Name: master_volume
+      Path: Default Work Unit\master_volume
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: master_volume
+        ObjectType: 13
+      ID: -115298416
+      Guid: 82702a7102757442b0ade3a7466532ec
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{EC630F8B-06E6-4751-ADBE-A365D4D8EF52}'
+    m_lastTimePsrt1: 1255037994
+    m_lastTimePart2: -1999283820
+    List: []
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{0C510D23-2986-48B1-8864-3EDE66B1E723}'
+    m_lastTimePsrt1: 1254977937
+    m_lastTimePart2: -1999283820
+    List: []
+  ExpandedItems:
+  - /cowboy_rhythm_WwiseProject
+  - /cowboy_rhythm_WwiseProject/Events
+  - /cowboy_rhythm_WwiseProject/Events/Default Work Unit
+  m_lastPopulateTimePsrt1: 0
+  m_lastPopulateTimePart2: 0
+  autoPopulateEnabled: 1
+  basePath: Audio\GeneratedSoundBanks
+  language: English(US)
+  defaultPoolSize: 4096
+  lowerPoolSize: 2048
+  streamingPoolSize: 1024
+  preparePoolSize: 0
+  memoryCutoffThreshold: 0.95
+  callbackManagerBufferSize: 4

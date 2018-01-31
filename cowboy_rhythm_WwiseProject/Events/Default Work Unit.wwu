@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0752FA44-ACDE-4E60-AD59-5699775F1A63}" SchemaVersion="85">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{0752FA44-ACDE-4E60-AD59-5699775F1A63}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="urban_loop" ID="{0405B5F4-7420-49D3-8A00-39FC38DBBA6F}">
+					<ChildrenList>
+						<Action Name="" ID="{F897ADC5-6CCA-4783-BCF6-E14988B72C91}" ShortID="238020373">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="urban_loop" ID="{CC102A6B-56DE-465C-8392-F0FD7C53353F}" WorkUnitID="{51E0D37A-CDC3-4EDD-AC8C-BBAD95718ACA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="interactive_music" ID="{D6ACA572-60BE-4B92-9E5F-0300E405FF92}">
+					<ChildrenList>
+						<Action Name="" ID="{25B9BDC4-EFDF-411E-98E2-3F5914307558}" ShortID="681400237">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="interactive_music" ID="{D9087E55-6934-4800-AEA3-FF2EBCBCC9FF}" WorkUnitID="{51E0D37A-CDC3-4EDD-AC8C-BBAD95718ACA}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

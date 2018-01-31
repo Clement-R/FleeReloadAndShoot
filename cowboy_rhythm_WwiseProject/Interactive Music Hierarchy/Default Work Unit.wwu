@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{51E0D37A-CDC3-4EDD-AC8C-BBAD95718ACA}" SchemaVersion="85">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{51E0D37A-CDC3-4EDD-AC8C-BBAD95718ACA}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="interactive_music" ID="{D9087E55-6934-4800-AEA3-FF2EBCBCC9FF}" ShortID="158532564">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="98"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7EA72CA5-A3F5-4E82-A78D-85EC79B20B9D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53766FF2-7B7E-404B-9FE1-BB2753BA0913}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="urban_loop" ID="{CC102A6B-56DE-465C-8392-F0FD7C53353F}" ShortID="473915113">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="19591.8594104308"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="98"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7EA72CA5-A3F5-4E82-A78D-85EC79B20B9D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53766FF2-7B7E-404B-9FE1-BB2753BA0913}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Urban Loop4 98" ID="{E8EF17E3-0EAC-4F1D-A963-AC72591F3512}" ShortID="456831590">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{53766FF2-7B7E-404B-9FE1-BB2753BA0913}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Urban Loop4 98" ID="{07355979-D7C4-4905-92E8-5B02079D55E7}" ShortID="453730183">
+											<Language>SFX</Language>
+											<AudioFile>Urban Loop4 98.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{3FCB9386-522A-45D1-A225-2A323F0CBB81}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{31C8D912-6D73-48A2-A65C-C49874A55683}">
+											<ClipList>
+												<MusicClip Name="Urban Loop4 98" ID="{75D66E4A-3F47-4704-948B-854C6FFB8D56}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="19591.8594104308"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Urban Loop4 98" ID="{07355979-D7C4-4905-92E8-5B02079D55E7}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{4B5823A8-1EC1-4F18-A33C-6520CEF13426}"/>
+								<MusicCue Name="Exit Cue" ID="{A0711EDB-6515-4B96-B424-2FCA1C6E76CE}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="19591.8594104308"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{DA420F07-E38E-456C-823D-A43CF83C4193}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{2D1F7738-E32A-41DC-81BE-FD33F4C70727}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{FE874293-20A3-4F12-92B3-FFE32275DE8B}" ShortID="915844969">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{C0083EC9-2106-49AA-95A9-8F823AC991D9}" ShortID="908011038">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="urban_loop" ID="{CC102A6B-56DE-465C-8392-F0FD7C53353F}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

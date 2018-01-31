@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3734989563	interactive_music			\Default Work Unit\interactive_music	
+	4124431196	urban_loop			\Default Work Unit\urban_loop	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	453730183	Urban Loop4 98	E:\_Dev\Gamedev\cowboy_rhythm\cowboy_rhythm_WwiseProject\.cache\Mac\SFX\Urban Loop4 98_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\interactive_music\urban_loop\Urban Loop4 98		3456068
+
