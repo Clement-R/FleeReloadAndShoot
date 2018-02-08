@@ -5,8 +5,8 @@ using pkm.EventManager;
 
 public class BeatDetection : MonoBehaviour
 {
-    public void BeatCallback()
+    public void BeatCallback(float beatDuration)
     {
-        EventManager.TriggerEvent("Beat", new { });
+        EventManager.TriggerEvent("Beat", new { duration = beatDuration });
     }
 }

@@ -30,7 +30,8 @@ public class MusicManager : MonoBehaviour {
                 break;
 
             case AkCallbackType.AK_MusicSyncBeat:
-                _beatManager.BeatCallback();
+                AkMusicSyncCallbackInfo info = (AkMusicSyncCallbackInfo)callbakInfo;
+                _beatManager.BeatCallback(info.segmentInfo_fBeatDuration);
                 break;
         }
     }
