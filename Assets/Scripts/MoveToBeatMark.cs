@@ -13,14 +13,14 @@ public class MoveToBeatMark : MonoBehaviour {
     private GameObject _beatMarker;
     private float _index = 0f;
     private bool _isMoving = false;
-	
-	void Start ()
+
+    private void Awake()
     {
         _beatMarker = GameObject.FindGameObjectWithTag("BeatMarker");
         EventManager.StartListening("Beat", LaunchMovement);
     }
 
-    void LaunchMovement(dynamic obj)
+    public void LaunchMovement(dynamic obj)
     {
         if(!_isMoving)
         {
@@ -46,6 +46,7 @@ public class MoveToBeatMark : MonoBehaviour {
         }
         
         _index = markers.ToList().IndexOf(gameObject);
+        _index = Mathf.Clamp(_index, 0, 3);
 
         Vector3 currentPos = transform.position;
 
@@ -57,7 +58,17 @@ public class MoveToBeatMark : MonoBehaviour {
         {
             t += Time.deltaTime / timeToMove;
             transform.position = Vector3.Lerp(currentPos, position, t);
+
+            if(t >= 1)
+            {
+                // Tell the spawner to create a new action
+                EventManager.TriggerEvent("PlayAction", new { side = this.side });
+                EventManager.TriggerEvent("SpawnAction", new { side = this.side, beatDuration = _beatDuration });
+            }
+
             yield return null;
         }
+        
+        Destroy(gameObject);
     }
 }
