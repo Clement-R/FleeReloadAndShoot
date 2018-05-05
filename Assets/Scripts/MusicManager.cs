@@ -6,9 +6,13 @@ using pkm.EventManager;
 public class MusicManager : MonoBehaviour {
 
     private BeatDetection _beatManager;
+    private uint _songId;
 
     void Start()
     {
+        EventManager.StartListening("Pause", PauseSong);
+        EventManager.StartListening("Resume", ResumeSong);
+
         _beatManager = GetComponent<BeatDetection>();
         StartCoroutine(LaunchSong());
     }
@@ -18,7 +22,7 @@ public class MusicManager : MonoBehaviour {
         yield return null;
         yield return null;
 
-        AkSoundEngine.PostEvent("interactive_music", gameObject, (uint)AkCallbackType.AK_MusicSyncBeat | (uint)AkCallbackType.AK_EndOfEvent | (uint)AkCallbackType.AK_EnableGetSourcePlayPosition, MainMusicCallback, this);
+        _songId = AkSoundEngine.PostEvent("interactive_music", gameObject, (uint)AkCallbackType.AK_MusicSyncBeat | (uint)AkCallbackType.AK_EndOfEvent | (uint)AkCallbackType.AK_EnableGetSourcePlayPosition, MainMusicCallback, this);
     }
 
     void MainMusicCallback(object cookie, AkCallbackType type, object callbakInfo)
@@ -34,5 +38,15 @@ public class MusicManager : MonoBehaviour {
                 _beatManager.BeatCallback(info.segmentInfo_fBeatDuration);
                 break;
         }
+    }
+
+    private void PauseSong(dynamic obj)
+    {
+        AkSoundEngine.ExecuteActionOnEvent(_songId, AkActionOnEventType.AkActionOnEventType_Pause);
+    }
+
+    private void ResumeSong(dynamic obj)
+    {
+        AkSoundEngine.ExecuteActionOnEvent(_songId, AkActionOnEventType.AkActionOnEventType_Resume);
     }
 }

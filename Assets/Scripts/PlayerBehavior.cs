@@ -15,6 +15,7 @@ public class PlayerBehavior : MonoBehaviour {
     public Sprite bubbleShoot;
     public Sprite bubbleReload;
     public Sprite bubbleDefend;
+    public Sprite bubbleHidden;
 
     [Header("UI gameobjects")]
     public GameObject[] bulletsUI = new GameObject[3];
@@ -80,14 +81,42 @@ public class PlayerBehavior : MonoBehaviour {
                     break;
             }
 
+            print(_action + " : " + side);
+
+            StartCoroutine(ShowBubble(_action));
+
             _isDefending = false;
             _action = Actions.None;
         }
     }
 
-    void ShowBubble()
+    IEnumerator ShowBubble(Actions action)
     {
-        // TODO
+        Sprite sprite = null;
+        switch (action)
+        {
+            case Actions.Shoot:
+                sprite = bubbleShoot;
+                break;
+            case Actions.Defend:
+                sprite = bubbleDefend;
+                break;
+            case Actions.Reload:
+                sprite = bubbleReload;
+                break;
+            case Actions.None:
+                sprite = null;
+                break;
+        }
+
+        bubble.sprite = sprite;
+
+        yield return new WaitForSeconds(0.4f);
+
+        if(bubble.sprite != bubbleHidden)
+        {
+            bubble.sprite = null;
+        }
     }
 
     void Update ()
@@ -96,19 +125,17 @@ public class PlayerBehavior : MonoBehaviour {
         if(Input.GetKeyDown(shotKey))
         {
             _action = Actions.Shoot;
+            bubble.sprite = bubbleHidden;
         }
         else if(Input.GetKeyDown(reloadKey))
         {
             _action = Actions.Reload;
+            bubble.sprite = bubbleHidden;
         }
         else if (Input.GetKeyDown(defendKey))
         {
             _action = Actions.Defend;
-        }
-
-        if(_action != Actions.None)
-        {
-            print(_action + " : " + side);
+            bubble.sprite = bubbleHidden;
         }
     }
 
@@ -194,5 +221,8 @@ public class PlayerBehavior : MonoBehaviour {
     void Lose()
     {
         // TODO
+        EventManager.TriggerEvent("Lose", new { side = side });
+        EventManager.TriggerEvent("Pause", new { });
+        print("Lose " + side);
     }
 }
