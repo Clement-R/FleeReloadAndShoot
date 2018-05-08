@@ -31,7 +31,7 @@ public class PlayerBehavior : MonoBehaviour {
     private int _rounds = 0;
     private bool _isDefending = false;
     private Actions _action;
-
+    private Animator _animator;
 	void Awake ()
     {
         EventManager.StartListening("PlayAction", PlayAction);
@@ -43,6 +43,7 @@ public class PlayerBehavior : MonoBehaviour {
         }
 
         _action = Actions.None;
+        _animator = GetComponent<Animator>();
     }
 
     void OnGettingShot(dynamic obj)
@@ -54,6 +55,13 @@ public class PlayerBehavior : MonoBehaviour {
             {
                 // Lose health
                 TakeDamage();
+                _animator.SetBool("reload_dodge", false);
+                _animator.SetTrigger("hit");
+            }
+            else
+            {
+                _animator.SetBool("reload_dodge", true);
+                _animator.SetTrigger("reload");
             }
         }
     }
@@ -149,6 +157,14 @@ public class PlayerBehavior : MonoBehaviour {
 
             // Shoot action
             EventManager.TriggerEvent("PlayerShoot", new { side = side });
+
+            _animator.SetBool("shoot_fail", false);
+            _animator.SetTrigger("shoot");
+        }
+        else
+        {
+            _animator.SetBool("shoot_fail", true);
+            _animator.SetTrigger("shoot");
         }
 
         UpdateUI();
@@ -164,7 +180,19 @@ public class PlayerBehavior : MonoBehaviour {
     void Reload()
     {
         _bullets++;
+
+        if(_bullets == 3)
+        {
+            _animator.SetBool("reload_fail", true);
+        }
+        else
+        {
+            _animator.SetBool("reload_fail", false);
+        }
+
         _bullets = Mathf.Clamp(_bullets, 0, 3);
+
+        _animator.SetTrigger("reload");
 
         UpdateUI();
     }
